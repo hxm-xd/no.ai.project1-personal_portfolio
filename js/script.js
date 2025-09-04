@@ -37,4 +37,11 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
+var grid = document.querySelector('.projects');
 
+var msnry = new Masonry(grid,{
+  itemSelecttor: '.card',
+  columnWidth: 'card',
+  gutter: 20,
+  fitWidth: true
+});
