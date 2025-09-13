@@ -105,7 +105,7 @@ nav a:hover{
 @keyframes typing{
 
     from {width: 0; }
-    to {width: 25ch;}
+    to {width: 26ch;}
 
 }
 
@@ -127,6 +127,10 @@ nav a:hover{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     position: relative;
     background-color: black;
+}
+
+.my-slideshow img{
+    height: 300px;
 }
 
 .about{
@@ -249,13 +253,63 @@ nav a:hover{
 }
 
 .card:hover h1{
-    transform: translateY(-5px);
     color: blueviolet;
 }
 
 .card-content{
     overflow: hidden;
     transition: ease 1s;
+}
+
+.volunteering{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: fit-content;
+    align-items: center;
+    justify-items: center;
+    display: grid;
+    transition: 0.3s ease;
+}
+
+.ex-yr{
+    text-align: center;
+}
+
+.vol-card{
+    font-size: 24px;
+    width: 350px;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vol-card:hover{
+    border: 2px blueviolet solid;
+}
+
+.vol-title{
+    font-weight: bold;
+    font-size: 20px;  
+    cursor: pointer;
+    margin: 0;
+}
+
+.positions{
+    font-weight: bold;
+    font-size: 16px;
+    list-style: none;
+}
+
+.positions li{
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 20px;
+}
+
+
+.date{
+    font-size: 12px;
 }
 
 footer{
@@ -287,7 +341,13 @@ h1{
     font-size: 36px;
 }
 
+h2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size:28px
+}
+
 p{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 20px;
+    font-size: 16px;
 }
