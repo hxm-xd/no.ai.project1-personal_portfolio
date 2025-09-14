@@ -1,12 +1,3 @@
-const header = document.querySelector('#navbar');
-
-window.addEventListener('scroll', () => {
-  if(window.scrollY > 50){ // scroll 50px down
-    header.classList.add('shrink');
-  } else {
-    header.classList.remove('shrink');
-  }
-});
 
 document.addEventListener("DOMContentLoaded", () => {
       const header = document.querySelector("#navbar");
@@ -25,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
           number: { value: 250 },
           size: { value: 2 },
           move: { speed: 0.6 },
-          color: { value: "#8a2be2" },
+          color: { value: "#8a2be2"},
           line_linked: {
             enable: true,
             distance: 150,

@@ -129,28 +129,30 @@ nav a:hover{
     background-color: black;
 }
 
-.my-slideshow img{
-    height: 300px;
-}
-
 .about{
     justify-content: center;
     align-items: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
-    padding: 20px;
     padding-left: 30px;
+    padding-top: 20px ;
+    height: 100vh;
+}
+
+.about-left{
+    flex-direction: row;
+    flex: 1;
 }
 
 .about-text{
     flex: 1;
     font-size: 20px;
+    padding-right: 30px;
 }
 
-.me{
-    width: 470px;
-    border-radius: 20px;
-    padding: 10px;
+.pic-me{
+    width: 480px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
     height: auto;
     flex: 1;
     justify-content: center;
@@ -256,6 +258,7 @@ nav a:hover{
     color: blueviolet;
 }
 
+
 .card-content{
     overflow: hidden;
     transition: ease 1s;
@@ -268,6 +271,8 @@ nav a:hover{
     justify-items: center;
     display: grid;
     transition: 0.3s ease;
+    padding-bottom: 20px;
+    gap: 20px;
 }
 
 .ex-yr{
@@ -276,63 +281,88 @@ nav a:hover{
 
 .vol-card{
     font-size: 24px;
-    width: 350px;
+    width: 1000px;
     height: fit-content;
+    background-color: black;
+    color: white;
     padding: 10px;
     border-radius: 15px;
-    border: 2px solid transparent;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    border: 5px solid transparent;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
 }
 
 .vol-card:hover{
-    border: 2px blueviolet solid;
+    border: 5px blueviolet solid;
+    box-shadow: 0 5px 1px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
 }
+
+
 
 .vol-title{
     font-weight: bold;
     font-size: 20px;  
-    cursor: pointer;
     margin: 0;
+    transition: all 0.3s ease;
 }
 
+.vol-title:hover{
+    transform: scale(1.05);
+    color: blueviolet;
+}
 .positions{
     font-weight: bold;
     font-size: 16px;
-    list-style: none;
 }
 
 .positions li{
     position: relative;
-    padding-left: 25px;
     margin-bottom: 20px;
 }
-
+.vol-imgs{
+    display: grid;
+    row-gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+}
+.vol-img img{
+    width: 400px;
+    height: fit-content;
+    border-radius: 10px;
+}
 
 .date{
     font-size: 12px;
 }
 
 footer{
-    justify-content: center;
     align-items: center;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 28px;
     color: white;   
     font-size: 20px;
     background-color: black;
     height: 40vh;
-
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    transition: 0.3s ease;
 }
 
 footer .footer-links a {
   color: white;
   font-size: 24px;
   margin: 0 15px;
-  transition: color 0.3s ease, transform 0.3s ease;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+
+}
+
+footer .footer-links .fab, footer .footer-links .fas{
+    transition: ease 0.3s;
+}
+
+footer .footer-links .fab:hover, footer .footer-links .fas:hover{
+    transform: scale(1.15);
+    color: blueviolet;
 }
 
 h1{
