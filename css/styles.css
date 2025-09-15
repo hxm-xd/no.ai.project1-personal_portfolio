@@ -121,12 +121,56 @@ nav a:hover{
     text-align: left;
     padding-left: 20px;
     font-size: 28px;
-    justify-content: center;
-    align-content: center;
+    justify-items: center;
+    align-items: center;
     color: white;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     position: relative;
     background-color: black;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.home h1{
+    font-size: 40px;
+}
+
+.photos-me{
+    opacity: 0;
+    justify-items: right;
+    padding-left: 150px;
+    padding-top: 30px;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 3s;
+}
+
+#photos-me {
+  transition: opacity 0.5s ease;
+  transition: ease 0.3s;
+}
+
+
+@keyframes fadeIn {
+    to{
+        transform: translateX(-40px);
+        opacity: 1;
+    }    
+}
+
+.photos-me img{
+    height: 500px;
+    border-radius: 10px;
+    width: fit-content;
+    flex: 1;
+}
+
+.photos-me img:hover{
+    transform: scale(1.05);
+}   
+.about-left{
+    flex-direction: row;
+    flex: 1;
 }
 
 .about{
@@ -134,19 +178,28 @@ nav a:hover{
     align-items: center;
     display: flex;
     padding-left: 30px;
-    padding-top: 20px ;
+    padding-top: 3px;
     height: 100vh;
 }
 
-.about-left{
-    flex-direction: row;
-    flex: 1;
+.about-edu, .about-loc{
+    text-align: left;
+    font-size: 20px;
+}
+
+.about h2{
+    text-align: left;
+}
+
+.about-edu p, .about-loc p{
+    font-size: 20px;
 }
 
 .about-text{
     flex: 1;
     font-size: 20px;
     padding-right: 30px;
+    padding-top: 50px;
 }
 
 .pic-me{
@@ -156,9 +209,11 @@ nav a:hover{
     height: auto;
     flex: 1;
     justify-content: center;
+    
 }
 
 .skills{    
+    padding-top: 60px;
     align-items: center;
     justify-items: center;
     text-align: center;
@@ -214,6 +269,10 @@ nav a:hover{
 }
 
 .projects{
+    padding-top: 60px;
+}
+
+.projects-cards{
     font-size: 30px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     columns: 350px;
@@ -231,7 +290,7 @@ nav a:hover{
     transform: translateY(-5px)
 }
 
-.projects a{
+.projects-cards a{
     color: white;
     text-decoration: none;
     transition: 0.3s ease;
@@ -250,6 +309,10 @@ nav a:hover{
     margin: 0 0 20px 0;
 }
 
+.card:hover{
+    transform: scale(1.05);
+}
+
 .card h1{
     transition: ease 0.3s;
 }
@@ -265,6 +328,7 @@ nav a:hover{
 }
 
 .volunteering{
+    padding-top: 60px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     height: fit-content;
     align-items: center;
@@ -362,7 +426,7 @@ footer .footer-links .fab, footer .footer-links .fas{
 
 footer .footer-links .fab:hover, footer .footer-links .fas:hover{
     transform: scale(1.15);
-    color: blueviolet;
+    color: blueviolet
 }
 
 h1{
