@@ -13,6 +13,17 @@ html, body {
   z-index: 0;
 }
 
+.reveal{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease;
+}
+
+.reveal.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+
 header{
     position: fixed;
     display: flex;
@@ -134,6 +145,7 @@ nav a:hover{
 
 .home h1{
     font-size: 40px;
+    padding-left: 10px;
 }
 
 .photos-me{
@@ -166,7 +178,7 @@ nav a:hover{
 }
 
 .photos-me img:hover{
-    transform: scale(1.05);
+    transform: translateY(-10px);
 }   
 .about-left{
     flex-direction: row;
@@ -220,6 +232,10 @@ nav a:hover{
     gap: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
+}
+
+.skills-container{
+    padding-top: 30px;
 }
 
 .skill {
@@ -399,6 +415,57 @@ nav a:hover{
     font-size: 12px;
 }
 
+.contact{
+    margin: 80px;
+    align-items: center;
+    justify-items: center;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact h3{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 28px;
+    font-weight: bolder;
+}
+
+.contact p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+}
+
+.contact-card, .dwn-contact-card{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    margin: 40px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover, .dwn-contact-card:hover{
+    transform: scale(1.05);
+}
+
+.dwn-contact-card:hover{
+    background-color: #00c61a;
+    cursor: pointer;
+}
+
+.map{
+    width: 550px;
+    height: 550px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+.map:hover{
+     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+
+}
+
 footer{
     align-items: center;
     text-align: center;
@@ -406,7 +473,7 @@ footer{
     color: white;   
     font-size: 20px;
     background-color: black;
-    height: 40vh;
+    height: 30vh;
     display: flex;
     flex-direction: column;
     padding-bottom: 20px;
@@ -418,6 +485,10 @@ footer .footer-links a {
   font-size: 24px;
   margin: 0 15px;
 
+}
+
+.footer-links{
+    padding-top: 100px;
 }
 
 footer .footer-links .fab, footer .footer-links .fas{
@@ -433,6 +504,7 @@ h1{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
     font-size: 36px;
+    margin: 0;
 }
 
 h2{
@@ -444,4 +516,8 @@ h2{
 p{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
+}
+
+a{
+    text-decoration: none;
 }

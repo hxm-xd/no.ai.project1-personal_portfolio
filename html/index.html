@@ -32,8 +32,8 @@
       </div>
     </section>
 
-    <section id="about" class="about">
-      <h1>About me</h1>
+    <section id="about" class="about reveal">
+      <h1>👨🏻About me</h1>
       <div class="about-left">
         <div class="about">
           <p class="about-text">
@@ -59,8 +59,8 @@
       </div>
     </section>
 
-    <section class="skills" id="skills">
-      <h1>Skills</h1>
+    <section class="skills reveal" id="skills">
+      <h1>🦾 Skills</h1>
       <div class="skills-container">
         <div class="skill">
           <p>Front-end development</p>
@@ -107,8 +107,8 @@
       </div>
     </section>
 
-    <section id="projects" class="projects">
-      <h1 class>Projects</h1>
+    <section id="projects" class="projects reveal">
+      <h1 class>⚒️ Projects</h1>
       <div class="projects-cards">
         <div class="card">
           <a
@@ -299,9 +299,9 @@
       </div>
     </section>
 
-    <section id="volunteering">
+    <section id="volunteering" class="volunteering reveal">
       <div class="volunteering">
-        <h1>Volunteering</h1>
+        <h1>🌍 Volunteering</h1>
         <div class="vol-card">
           <h2 class="vol-title">Rotaract club of Kandy Hill Capital</h2>
           <p class="ex-yr">2024 - Present</p>
@@ -334,8 +334,30 @@
       </div>
     </section>
 
-    <footer class="contact" id="contact">
-      <h1>Contact</h1>
+    <section id="contact" class="reveal">
+      <div class="contact">
+        <h1>📞 Contact</h1>
+        <div class="contact-cards">
+          <div class="contact-card">
+            <h3>📖 Education</h3>
+            <p>Higher National Diploma in Software Engineering - NIBM</p>
+          </div>
+          <div class="contact-card">
+            <h3>📍 Location</h3>
+            <p>Kandy, Sri Lanka</p>
+          </div>
+          <a href="../files/HamoodThariq.pdf" download>
+            <div class="dwn-contact-card">
+              <h3>📁 Resume</h3>
+              <p>Click to Download</p>
+            </div></a
+          >
+        </div>
+        <div class="map" id="map"></div>
+      </div>
+    </section>
+
+    <footer>
       <div class="footer-links">
         <a href="https://github.com/hxm-xd" target="_blank"
           ><i class="fab fa-github"></i
@@ -355,7 +377,12 @@
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-    <script src="../js/script.js"></script>
+    <script src="../js/script.js" defer></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYYo1q1neKBbcOoZPrroakES_gkwP_nXY&callback=initMap&libraries=marker"
+      async
+      defer
+    ></script>
   </body>
 </html>

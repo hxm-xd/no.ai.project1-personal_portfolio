@@ -14,6 +14,18 @@ particlesJS("particles-js", {
    },
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const reveals = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("active");
+      }
+    });
+  }, {threshold: 0.2});
+  reveals.forEach(el => observer.observe(el));
+});
 
 document.addEventListener("DOMContentLoaded", () => {
       const header = document.querySelector("#navbar");
@@ -30,19 +42,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const images = ["../images/Pera_me.jpg", "../images/Me_wrkshp.jpg", "../images/Me_sprit.jpg"
-    ,"../images/Me_pera2.jpg", "../images/Me_wrkshp.jpg"
+    ,"../images/Me_pera2.jpg", "../images/Me_wrkshp2.jpg"
   ];
 
   let index = 0;
   const slideshow = document.getElementById("photos-me");
 
+setTimeout(() => {
   setInterval(() => {
     slideshow.style.opacity = 0;
-    setTimeout(() => {
-      index = (index + 1) % images.length;
-      slideshow.src = images[index];
-      slideshow.style.opacity = 1;
-    }, 500);
-  }, 3000);
-
+      setTimeout(() => {
+        index = (index + 1) % images.length;
+        slideshow.src = images[index];
+        slideshow.style.opacity = 1;
+      },300);
+    }, 3000);
+  },3000);
 });
+
+function initMap(){
+
+  const location = {lat: 7.2906, lng: 80.6337 };
+  const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 14,
+      center: location,
+  });
+
+  new google.maps.Marker({
+    position: location,
+    map: map,
+    title: "Kandy City",
+  });
+
+}
