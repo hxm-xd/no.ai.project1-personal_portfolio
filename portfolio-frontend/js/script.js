@@ -75,3 +75,26 @@ function initMap(){
   });
 
 }
+
+
+//Fetch projects
+document.addEventListener("DOMContentLoaded", () => {
+
+  const projectContainer = document.querySelector(".projects-cards");
+
+fetch("http://localhost:5050/api/projects")
+.then((res) => res.json())
+  .then((projects) => {
+    projectContainer.innerHTML = "";
+    projects.forEach((project) => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+      <a href="${project.link}" target="_blank"><h1>${project.title}</h1></a>
+      <p>${project.description}</p>`;
+      projectContainer.appendChild(card);
+    });
+  })
+.catch((err) => console.error("Error fetching projects: ", err));
+
+});

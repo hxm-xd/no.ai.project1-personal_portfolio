@@ -284,64 +284,66 @@ nav a:hover{
     transform: scale(1.05);
 }
 
-.projects{
-    padding-top: 60px;
-}
+    .projects{
+        padding-top: 60px;
+    }
 
-.projects-cards{
-    font-size: 30px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    columns: 350px;
-    padding: 30px;
-}
+    .projects-cards{
+        font-size: 30px;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        columns: 350px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 30px;
+    }
 
-.project-img{
-    object-fit: cover;
-    height: 250px;
-    border-radius: 10px;
-    transition: 0.3s ease;
-}
+    .project-img{
+        object-fit: cover;
+        height: 250px;
+        border-radius: 10px;
+        transition: 0.3s ease;
+    }
 
-.project-img:hover{
-    transform: translateY(-5px)
-}
+    .project-img:hover{
+        transform: translateY(-5px)
+    }
 
-.projects-cards a{
-    color: white;
-    text-decoration: none;
-    transition: 0.3s ease;
-}
+    .projects-cards a{
+        color: white;
+        text-decoration: none;
+        transition: 0.3s ease;
+    }
 
-.card{
-    color: white;
-    padding: 30px;
-    border-radius: 10px;
-    background-color: black;
-    text-align: center;
-    height: fit-content;
-    transition: ease .5s;
-    display: inline-block;
-    width: fit-content;
-    margin: 0 0 20px 0;
-}
+    .card{
+        color: white;
+        padding: 30px;
+        border-radius: 10px;
+        background-color: black;
+        text-align: center;
+        height: fit-content;
+        transition: ease .5s;
+        display: inline-block;
+        width: fit-content;
+        margin: 0 0 20px 0;
+    }
 
-.card:hover{
-    transform: scale(1.05);
-}
+    .card:hover{
+        transform: scale(1.05);
+    }
 
-.card h1{
-    transition: ease 0.3s;
-}
+    .card h1{
+        transition: ease 0.3s;
+    }
 
-.card:hover h1{
-    color: blueviolet;
-}
+    .card:hover h1{
+        color: blueviolet;
+    }
 
 
-.card-content{
-    overflow: hidden;
-    transition: ease 1s;
-}
+    .card-content{
+        overflow: hidden;
+        transition: ease 1s;
+    }
 
 .volunteering{
     padding-top: 60px;
@@ -417,9 +419,10 @@ nav a:hover{
 
 .contact{
     margin: 80px;
+    padding-top: 50px;
     align-items: center;
     justify-items: center;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     justify-content: space-between;
 }
