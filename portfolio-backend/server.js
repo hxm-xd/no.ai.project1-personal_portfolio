@@ -83,6 +83,28 @@ const projects = [
     }
 ];
 
+//Volunteering Data
+
+const volunteering = [
+  {
+    org: "Rotaract club of Kandy Hill Capital",
+    year: "2024 - Present",
+    positions: [
+      { role: "Director of Professional development", date: "July 2025 - Present" },
+      { role: "General Member", date: "June 2024 - June 2025" }
+    ]
+  },
+  {
+    org: "STEMUP Foundation - NIBM Kandy",
+    year: "2024 - Present",
+    positions: [
+      { role: "Co Lead", date: "July 2025 - Present" },
+      { role: "Volunteer", date: "Feb 2024 - June 2025" }
+    ]
+  }
+];
+
+
 app.get("/api/about", (req,res) =>{
     res.json(aboutData);
 });
@@ -95,6 +117,10 @@ app.get("/api/projects",(req, res) =>{
     res.json(projects);
 });
 
+app.get("/api/volunteering", (req, res) => {
+    res.json(volunteering);
+});
+
 app.listen(port, ()=> {
-    console.log(`Application has started at https://localhost:${port}`);
+    console.log(`Application has started at http://localhost:${port}`);
 });
