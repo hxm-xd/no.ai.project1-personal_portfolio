@@ -29,7 +29,26 @@ const aboutData =
     
 };
 
-//Mock Projects data
+//Skills data
+const skillsData = [
+  {
+    category: "Front-end development",
+    level: 70, // percentage for skill bar
+    tools: ["HTML", "CSS", "JavaScript", "React", "Java Swing", "Tailwind CSS", "FlutterFlow"]
+  },
+  {
+    category: "Back-end development",
+    level: 80,
+    tools: ["Spring Boot", "Node.js & Express.js", "Spring Boot(Java)", "Oracle Databases", ".NET", "Firebase", "CRUD APIs"]
+  },
+  {
+    category: "Embedded Systems and IoT",
+    level: 90,
+    tools: ["Arduino", "ESP", "PCB & Circuit Design", "Blynk"]
+  }
+];
+
+//Projects data
 const projects = [
     { 
         id: 1,
@@ -66,6 +85,10 @@ const projects = [
 
 app.get("/api/about", (req,res) =>{
     res.json(aboutData);
+});
+
+app.get("/api/skills", (req, res) =>{
+    res.json(skillsData);
 });
 
 app.get("/api/projects",(req, res) =>{
