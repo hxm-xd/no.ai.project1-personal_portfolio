@@ -76,6 +76,20 @@ function initMap(){
 
 }
 
+//Fetch About data
+document.addEventListener("DOMContentLoaded", () =>{
+
+  const aboutText = document.querySelector(".about-text");
+  const aboutImage = document.querySelector(".pic-me");
+
+  fetch("http://localhost:5050/api/about")
+  .then(res => res.json())
+    .then(data =>{
+      aboutText.innerHTML = data.description;
+      aboutImage.src = data.image;
+    })
+    .catch(err => console.log("Error fetching about data: ", err));
+}); 
 
 //Fetch projects
 document.addEventListener("DOMContentLoaded", () => {
@@ -91,7 +105,13 @@ fetch("http://localhost:5050/api/projects")
       card.className = "card";
       card.innerHTML = `
       <a href="${project.link}" target="_blank"><h1>${project.title}</h1></a>
-      <p>${project.description}</p>`;
+      <p>${project.timeframe}</p>
+      <div class="card-content">
+        <p>${project.description}</p>
+        <ul class="tools">
+          ${project.toolList.map(tool => `<li>${tool}</li>`).join('')}
+        </ul>
+      </div>`;
       projectContainer.appendChild(card);
     });
   })
