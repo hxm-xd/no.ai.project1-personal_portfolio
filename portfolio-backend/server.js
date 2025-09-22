@@ -84,7 +84,6 @@ const projects = [
 ];
 
 //Volunteering Data
-
 const volunteering = [
   {
     org: "Rotaract club of Kandy Hill Capital",

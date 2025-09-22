@@ -91,30 +91,82 @@ document.addEventListener("DOMContentLoaded", () =>{
     .catch(err => console.log("Error fetching about data: ", err));
 }); 
 
+//Fetch skills
+document.addEventListener("DOMContentLoaded", () => {
+
+  const skillsContainer = document.querySelector(".skills-container");
+
+  fetch("http://localhost:5050/api/skills")
+    .then(res => res.json())
+      .then(skills => {
+        skillsContainer.innerHTML = "";
+
+        skills.forEach(skill => {
+          const skillDiv = document.createElement("div");
+
+          skillDiv.className = "skill";
+          skillDiv.innerHTML = `
+          <p>${skill.category}</p>
+          <div class="skill-bar">
+            <div class="level" style="width: ${skill.level}%"></div>
+          </div>
+          <ul class="tools">
+            ${skill.tools.map(tool => `<li>${tool}</li>`).join('')}
+          `;
+          skillsContainer.appendChild(skillDiv);
+        });
+      })
+      .catch(err => console.error("Error fetching skill details: ",err));
+});
+
 //Fetch projects
 document.addEventListener("DOMContentLoaded", () => {
 
   const projectContainer = document.querySelector(".projects-cards");
 
-fetch("http://localhost:5050/api/projects")
-.then((res) => res.json())
-  .then((projects) => {
-    projectContainer.innerHTML = "";
-    projects.forEach((project) => {
-      const card = document.createElement("div");
-      card.className = "card";
-      card.innerHTML = `
-      <a href="${project.link}" target="_blank"><h1>${project.title}</h1></a>
-      <p>${project.timeframe}</p>
-      <div class="card-content">
-        <p>${project.description}</p>
-        <ul class="tools">
-          ${project.toolList.map(tool => `<li>${tool}</li>`).join('')}
-        </ul>
-      </div>`;
+  fetch("http://localhost:5050/api/projects")
+  .then((res) => res.json())
+    .then((projects) => {
+      projectContainer.innerHTML = "";
+      projects.forEach((project) => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <a href="${project.link}" target="_blank"><h1>${project.title}</h1></a>
+          <p>${project.timeframe}</p>
+          <div class="card-content">
+            <p>${project.description}</p>
+            <ul class="tools">
+              ${project.toolList.map(tool => `<li>${tool}</li>`).join('')}
+            </ul>
+          </div>`;
       projectContainer.appendChild(card);
     });
   })
 .catch((err) => console.error("Error fetching projects: ", err));
+});
 
+//Fetch volunteering details
+document.addEventListener("DOMContentLoaded", () => {
+
+  const volunteeringContainer = document.querySelector(".volunteering");
+
+  fetch("http://localhost:5050/api/volunteering")
+    .then((res) => res.json())
+      .then((volunteering) => {
+        volunteeringContainer.innerHTML = "";
+        volunteering.forEach((volunteering) =>{
+          const vol_card = document.createElement("div");
+          vol_card.className = "vol-card";
+          vol_card.innerHTML = `
+          <h2 class="vol-title">${volunteering.org}</h2>
+          <p class="ex-yr">${volunteering.year}</p>
+            <ul class="positions">
+              ${volunteering.positions.map(role => `<li>${role.role}<p class "date">${role.date}</p></li>`).join('')}
+            </ul>
+          </div>`;
+          volunteeringContainer.appendChild(vol_card);
+        });
+      })
+    .catch((err) =>console.error("Error fetching Volunteering data: ",err));
 });
