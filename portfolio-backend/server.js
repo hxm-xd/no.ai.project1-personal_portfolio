@@ -15,11 +15,6 @@ const Volunteering = require("./models/volunteering");
 app.use(express.static("public"));
 app.use(express.json());
 
-app.use(cors({
-  origin: "https://hamoodthariq.netlify.app", 
-  credentials: true
-}));
-
 const corsOptions = {
   origin: "https://hamoodthariq.netlify.app",
   credentials: true
@@ -43,13 +38,15 @@ app.get("/api/about",async (req,res) =>{
     }
 });
 
-app.get("/api/skills",async (req, res) =>{
-    try{
-        const skills = await Skill.find();
-        res.json(skills);
-    } catch (err){
-        res.status(500).json({message: err.message});
-    }
+app.get("/api/skills", async (req, res) => {
+  try {
+    const skills = await Skill.find();
+    console.log("Skills fetched:", skills); // see output in server logs
+    res.json(skills);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: err.message });
+  }
 });
 
 app.get("/api/projects", async (req, res) =>{
