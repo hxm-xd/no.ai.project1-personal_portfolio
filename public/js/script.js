@@ -60,21 +60,6 @@ setTimeout(() => {
   },3000);
 });
 
-function initMap(){
-
-  const location = {lat: 7.2906, lng: 80.6337 };
-  const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 14,
-      center: location,
-  });
-
-  new google.maps.Marker({
-    position: location,
-    map: map,
-    title: "Kandy City",
-  });
-
-}
 
 //Fetch About data
 document.addEventListener("DOMContentLoaded", () =>{
@@ -93,31 +78,45 @@ document.addEventListener("DOMContentLoaded", () =>{
 
 //Fetch skills
 document.addEventListener("DOMContentLoaded", () => {
-
   const skillsContainer = document.querySelector(".skills-container");
 
   fetch("http://localhost:5050/api/skills")
     .then(res => res.json())
-      .then(skills => {
-        skillsContainer.innerHTML = "";
+    .then(skills => {
+      skillsContainer.innerHTML = "";
 
-        skills.forEach(skill => {
-          const skillDiv = document.createElement("div");
-
-          skillDiv.className = "skill";
-          skillDiv.innerHTML = `
+      skills.forEach(skill => {
+        const skillDiv = document.createElement("div");
+        skillDiv.className = "skill";
+        skillDiv.innerHTML = `
           <p>${skill.category}</p>
           <div class="skill-bar">
-            <div class="level" style="width: ${skill.level}%"></div>
+            <div class="level" data-level="${skill.level}%"></div>
           </div>
           <ul class="tools">
             ${skill.tools.map(tool => `<li>${tool}</li>`).join('')}
-          `;
-          skillsContainer.appendChild(skillDiv);
+          </ul>
+        `;
+        skillsContainer.appendChild(skillDiv);
+      });
+
+      // Animate bars when they come into view
+      const levels = document.querySelectorAll('.level');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const bar = entry.target;
+            bar.style.width = bar.dataset.level;
+            observer.unobserve(bar);
+          }
         });
-      })
-      .catch(err => console.error("Error fetching skill details: ",err));
+      }, { threshold: 0.4 });
+
+      levels.forEach(level => observer.observe(level));
+    })
+    .catch(err => console.error("Error fetching skill details: ", err));
 });
+
 
 //Fetch projects
 document.addEventListener("DOMContentLoaded", () => {
