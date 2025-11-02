@@ -6,4 +6,4 @@ const skillSchema = new mongoose.Schema({
     tools: [String]
 });
 
-module.exports = mongoose.Schema("Skill", skillSchema);
+module.exports = mongoose.model("Skill", skillSchema);
