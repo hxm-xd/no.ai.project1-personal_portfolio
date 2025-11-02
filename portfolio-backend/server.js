@@ -8,7 +8,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const Project = require("./models/project");
-const Skill = require("./models/skill");
+const Skill = require("./models/skills");
 const About = require("./models/about");
 const Volunteering = require("./models/volunteering");
 
