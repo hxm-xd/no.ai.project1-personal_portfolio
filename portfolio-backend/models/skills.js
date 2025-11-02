@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const skillSchema = new mongoose.Schema({
     category: String,
-    level: String,
+    level: Number,
     tools: [String]
 });
 
