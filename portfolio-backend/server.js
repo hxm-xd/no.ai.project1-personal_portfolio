@@ -23,9 +23,13 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 
-mongoose.connect(process.env.MONGO_URL)
-  .then(() => console.log("Mongo Connected"))
-  .catch(err => console.log(err));
+mongoose.connect(process.env.MONGO_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log("✅ MongoDB connected successfully"))
+.catch(err => console.error("❌ MongoDB connection error:", err));
+
 
   
 
