@@ -20,6 +20,11 @@ app.use(cors({
   credentials: true
 }));
 
+const corsOptions = {
+  origin: "https://hamoodthariq.netlify.app",
+  credentials: true
+};
+
 app.use(cors(corsOptions));
 app.options("*", cors(corsOptions));
 
@@ -51,7 +56,7 @@ app.get("/api/skills",async (req, res) =>{
 
 app.get("/api/projects", async (req, res) =>{
     try{ 
-        const projects = await Project.findOne();
+        const projects = await Project.find();
         res.json(projects);
     } catch (err){
         res.status(500).json({message: err.message});
@@ -60,7 +65,7 @@ app.get("/api/projects", async (req, res) =>{
 
 app.get("/api/volunteering",async (req, res) => {
     try{
-        const volunteering = await Volunteering.findOne();
+        const volunteering = await Volunteering.find();
         res.json(volunteering);
     } catch (err){
         res.status(500).json({message: err.message})
