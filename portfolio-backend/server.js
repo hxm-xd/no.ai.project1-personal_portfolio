@@ -20,6 +20,10 @@ app.use(cors({
   credentials: true
 }));
 
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
+
+
 
 mongoose.connect(process.env.MONGO_URL)
   .then(() => console.log("Mongo Connected"))
