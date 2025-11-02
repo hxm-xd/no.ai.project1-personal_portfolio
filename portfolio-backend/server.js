@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
 
-const Project = require("./models/project");
+const Project = require("./models/projects");
 const Skill = require("./models/skills");
 const About = require("./models/about");
 const Volunteering = require("./models/volunteering");
@@ -52,6 +52,7 @@ app.get("/api/skills", async (req, res) => {
 app.get("/api/projects", async (req, res) =>{
     try{ 
         const projects = await Project.find();
+         console.log("projects fetched:", projects)
         res.json(projects);
     } catch (err){
         res.status(500).json({message: err.message});
