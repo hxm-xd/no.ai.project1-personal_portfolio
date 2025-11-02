@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
 
-const Project = require("./models/aroject");
+const Project = require("./models/project");
 const Skill = require("./models/skill");
 const About = require("./models/about");
 const Volunteering = require("./models/volunteering");
