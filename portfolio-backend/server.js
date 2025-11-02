@@ -7,10 +7,10 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
 
-const Project = require("./models/Project");
-const Skill = require("./models/Skill");
-const About = require("./models/About");
-const Volunteering = require("./models/Volunteering");
+const Project = require("./models/aroject");
+const Skill = require("./models/skill");
+const About = require("./models/about");
+const Volunteering = require("./models/volunteering");
 
 app.use(express.static("public"));
 app.use(express.json());
@@ -27,10 +27,10 @@ mongoose.connect(process.env.MONGO_URL)
   .catch(err => console.log(err));
 
   
-  
+
 app.get("/api/about",async (req,res) =>{
     try{
-        const projects = await Project.findOne();
+        const projects = await About.findOne();
         res.json(about);
     } catch (err){
         res.status(500).json({message: err.message});
