@@ -6,4 +6,4 @@ const volunteeringSchmema = new mongoose.Schema({
     positions: [{role: String, date: String}]
 });
 
-module.exports = mongoose.model("Volunteeting", volunteeringSchmema);
+module.exports = mongoose.model("Volunteeting", volunteeringSchmema, "volunteering");

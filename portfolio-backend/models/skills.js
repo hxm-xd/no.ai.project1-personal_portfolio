@@ -6,4 +6,5 @@ const skillSchema = new mongoose.Schema({
     tools: [String]
 });
 
-module.exports = mongoose.model("Skill", skillSchema);
+module.exports = mongoose.model("Skill", skillSchema, "skills"); // third param = collection name
+
