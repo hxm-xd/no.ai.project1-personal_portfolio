@@ -26,9 +26,6 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.options("/*", cors(corsOptions)); // add the slash
-
-
 
 
 mongoose.connect(process.env.MONGO_URL)
