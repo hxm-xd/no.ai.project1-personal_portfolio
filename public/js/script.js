@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () =>{
   const aboutText = document.querySelector(".about-text");
   const aboutImage = document.querySelector(".pic-me");
 
-  fetch("http://localhost:5050/api/about")
+  fetch("https://hamoodthariq.netlify.app/api/about")
   .then(res => res.json())
     .then(data =>{
       aboutText.innerHTML = data.description;
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 document.addEventListener("DOMContentLoaded", () => {
   const skillsContainer = document.querySelector(".skills-container");
 
-  fetch("http://localhost:5050/api/skills")
+  fetch("https://hamoodthariq.netlify.app/api/skills")
     .then(res => res.json())
     .then(skills => {
       skillsContainer.innerHTML = "";
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const projectContainer = document.querySelector(".projects-cards");
 
-  fetch("http://localhost:5050/api/projects")
+  fetch("https://hamoodthariq.netlify.app/api/projects")
   .then((res) => res.json())
     .then((projects) => {
       projectContainer.innerHTML = "";
@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const volunteeringContainer = document.querySelector(".volunteering");
 
-  fetch("http://localhost:5050/api/volunteering")
+  fetch("https://hamoodthariq.netlify.app/api/volunteering")
     .then((res) => res.json())
       .then((volunteering) => {
         volunteeringContainer.innerHTML = "";
