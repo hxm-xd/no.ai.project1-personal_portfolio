@@ -21,7 +21,6 @@ app.use(cors({
 }));
 
 
-
 mongoose.connect(process.env.MONGO_URL)
   .then(() => console.log("Mongo Connected"))
   .catch(err => console.log(err));
@@ -30,7 +29,7 @@ mongoose.connect(process.env.MONGO_URL)
 
 app.get("/api/about",async (req,res) =>{
     try{
-        const projects = await About.findOne();
+        const about = await About.findOne();
         res.json(about);
     } catch (err){
         res.status(500).json({message: err.message});
@@ -39,7 +38,7 @@ app.get("/api/about",async (req,res) =>{
 
 app.get("/api/skills",async (req, res) =>{
     try{
-        const skills = await Skill.findOne();
+        const skills = await Skill.find();
         res.json(skills);
     } catch (err){
         res.status(500).json({message: err.message});
