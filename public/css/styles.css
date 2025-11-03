@@ -616,7 +616,7 @@ a{
     padding-top: 40px;
   }
   .projects-cards {
-    columns: 1;
+    columns: 200px;
     font-size: 24px;
     padding: 16px;
   }
