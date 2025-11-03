@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () =>{
   const aboutText = document.querySelector(".about-text");
   const aboutImage = document.querySelector(".pic-me");
 
-  fetch("https://hamoodthariq.netlify.app/api/about")
+  fetch("https://no-ai-portfolio.onrender.com/api/about")
   .then(res => res.json())
     .then(data =>{
       aboutText.innerHTML = data.description;
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 document.addEventListener("DOMContentLoaded", () => {
   const skillsContainer = document.querySelector(".skills-container");
 
-  fetch("https://hamoodthariq.netlify.app/api/skills")
+  fetch("https://no-ai-portfolio.onrender.com/api/skills")
     .then(res => res.json())
     .then(skills => {
       skillsContainer.innerHTML = "";
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const projectContainer = document.querySelector(".projects-cards");
 
-  fetch("https://hamoodthariq.netlify.app/api/projects")
+  fetch("https://no-ai-portfolio.onrender.com/api/projects")
   .then((res) => res.json())
     .then((projects) => {
       projectContainer.innerHTML = "";
@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const volunteeringContainer = document.querySelector(".volunteering");
 
-  fetch("https://hamoodthariq.netlify.app/api/volunteering")
+  fetch("https://no-ai-portfolio.onrender.com/api/volunteering")
     .then((res) => res.json())
       .then((volunteering) => {
         volunteeringContainer.innerHTML = "";
