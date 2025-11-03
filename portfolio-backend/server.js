@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const port = 5050;
+const port = process.env.PORT || 5050;
 
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
@@ -23,12 +23,21 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 
-mongoose.connect(process.env.MONGO_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log("✅ MongoDB connected successfully\nMongoDB URL: ",process.env.MONGO_URL))
-.catch(err => console.error("❌ MongoDB connection error:", err));
+if (!process.env.MONGO_URL) {
+  console.error("❌ Missing MONGO_URL environment variable");
+  process.exit(1);
+}
+
+mongoose
+  .connect(process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("✅ MongoDB connected successfully"))
+  .catch((err) => {
+    console.error("❌ MongoDB connection error:", err.message);
+    process.exit(1);
+  });
 
 
   
@@ -73,6 +82,13 @@ app.get("/api/volunteering",async (req, res) => {
 });
 
 
+// simple health endpoint for uptime checks
+app.get("/healthz", (req, res) => {
+  const dbState = mongoose.connection.readyState; // 1: connected
+  res.json({ ok: true, port, dbConnected: dbState === 1 });
+});
+
+
 app.listen(port, ()=> {
-    console.log(`Application has started at http://localhost:${port}`);
+    console.log(`Application has started on port ${port}`);
 });
