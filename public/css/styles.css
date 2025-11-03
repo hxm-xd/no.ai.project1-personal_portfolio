@@ -4,6 +4,11 @@ html, body {
   scroll-behavior: smooth;
 }
 
+/* Provide room for fixed header when using in-page anchors */
+html {
+  scroll-padding-top: 80px;
+}
+
 #particles-js {
   position: absolute;
   width: 100%;
@@ -150,7 +155,7 @@ nav a:hover{
 }
 
 .home h1{
-    font-size: 36px;
+    font-size: clamp(28px, 3vw + 16px, 36px);
     padding-left: 10px;
 }
 
@@ -557,7 +562,7 @@ a{
     padding: 10px 12px;
   }
   nav a {
-    padding: 2px 4px;
+    padding: 6px 8px; /* safer tap targets */
     font-size: 14px;
   }
   .typing {
@@ -584,6 +589,7 @@ a{
   .photos-me img {
     height: 280px;
     width: auto;
+    max-width: 100%;
   }
   .about {
     flex-direction: column;
@@ -664,5 +670,29 @@ a{
   .typing {
     animation: typing 3.3s steps(28, end) forwards, blink 0.5s step-end infinite;
     white-space: normal;
+  }
+  #particles-js {
+    opacity: 0.35; /* reduce visual noise on tiny screens */
+  }
+}
+
+/* Improve section anchor behavior with fixed header */
+#about, #skills, #projects, #volunteering, #contact {
+  scroll-margin-top: 80px;
+}
+
+/* Accessible focus styles for keyboard users */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid blueviolet;
+  outline-offset: 2px;
+}
+
+/* Respect user preference to reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }
