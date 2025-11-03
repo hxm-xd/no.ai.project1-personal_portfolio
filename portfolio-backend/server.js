@@ -23,7 +23,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
