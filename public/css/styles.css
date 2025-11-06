@@ -425,6 +425,7 @@ nav a:hover{
     height: 80vh;
     display: flex;
     justify-content: center;
+    padding-bottom: 80px;
 }
 
 .contact a{
