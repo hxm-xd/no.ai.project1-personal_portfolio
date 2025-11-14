@@ -1,0 +1,42 @@
+<div class="skill">
+          <p>Front-end development</p>
+          <div class="skill-bar">
+            <div class="level" style="width: 70%"></div>
+          </div>
+          <ul class="tools">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Java Swing</li>
+            <li>Tailwind CSS</li>
+            <li>FlutterFlow</li>
+          </ul>
+        </div>
+      </div>
+      <div class="skill">
+        <p>Back-end development</p>
+        <div class="skill-bar">
+          <div class="level" style="width: 80%"></div>
+        </div>
+        <ul class="tools">
+          <li>Spring Boot</li>
+          <li>Node.js & Express.js</li>
+          <li>Spring Boot(Java)</li>
+          <li>Oracle Databases</li>
+          <li>.NET</li>
+          <li>Firebase</li>
+          <li>CRUD APIs</li>
+        </ul>
+      </div>
+      <div class="skill">
+        <p>Embedded Systems and IoT</p>
+        <div class="skill-bar">
+          <div class="level" style="width: 90%"></div>
+        </div>
+        <ul class="tools">
+          <li>Arduino</li>
+          <li>ESP</li>
+          <li>PCB & Circuit Design</li>
+          <li>Blynk</li>
+        </ul>

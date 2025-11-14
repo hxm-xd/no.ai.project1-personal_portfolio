@@ -41,8 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const images = ["../images/Pera_me.jpg", "../images/Me_wrkshp.jpg", "../images/Me_sprit.jpg"
-    ,"../images/Me_pera2.jpg", "../images/Me_wrkshp2.jpg"
+  const images = ["public/images/Pera_me.jpg", "public/images/Me_wrkshp.jpg", "public/images/Me_sprit.jpg",
+    "public/images/Me_pera2.jpg", "public/images/Me_wrkshp2.jpg"
   ];
 
   let index = 0;
@@ -148,12 +148,12 @@ document.addEventListener("DOMContentLoaded", () => {
 //Fetch volunteering details
 document.addEventListener("DOMContentLoaded", () => {
 
-  const volunteeringContainer = document.querySelector(".volunteering");
+  const volunteeringContainer = document.querySelector(".volunteering .vol-card");
 
   fetch("https://no-ai-portfolio.onrender.com/api/volunteering")
     .then((res) => res.json())
       .then((volunteering) => {
-        volunteeringContainer.innerHTML = "";
+        if (volunteeringContainer) volunteeringContainer.innerHTML = "";
         volunteering.forEach((volunteering) =>{
           const vol_card = document.createElement("div");
           vol_card.className = "vol-card";
@@ -161,10 +161,10 @@ document.addEventListener("DOMContentLoaded", () => {
           <h2 class="vol-title">${volunteering.org}</h2>
           <p class="ex-yr">${volunteering.year}</p>
             <ul class="positions">
-              ${volunteering.positions.map(role => `<li>${role.role}<p class "date">${role.date}</p></li>`).join('')}
+              ${volunteering.positions.map(role => `<li>${role.role}<p class="date">${role.date}</p></li>`).join('')}
             </ul>
-          </div>`;
-          volunteeringContainer.appendChild(vol_card);
+          `;
+          if (volunteeringContainer) volunteeringContainer.appendChild(vol_card);
         });
       })
     .catch((err) =>console.error("Error fetching Volunteering data: ",err));
