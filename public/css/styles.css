@@ -377,7 +377,7 @@ nav a:hover{
 }
 
 .vol-card:hover{
-    border: 5px blueviolet solid;
+    background-color: blueviolet;
     box-shadow: 0 5px 1px rgba(0, 0, 0, 0.2);
     transform: translateY(-10px);
 }
