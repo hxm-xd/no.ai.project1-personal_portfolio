@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
-const volunteeringSchmema = new mongoose.Schema({
+const volunteeringSchema = new mongoose.Schema({
     org: String,
     year: String,
-    positions: [{role: String, date: String}]
+    positions: [{ role: String, date: String }]
 });
 
-module.exports = mongoose.model("Volunteeting", volunteeringSchmema, "volunteering");
+module.exports = mongoose.model("Volunteering", volunteeringSchema, "volunteering");
