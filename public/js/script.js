@@ -46,8 +46,8 @@ function initHeaderScroll(){
 
 function initSlideshow(){
   const images = [
-    'public/images/Pera_me.jpg', 'public/images/Me_wrkshp.jpg', 'public/images/Me_sprit.jpg',
-    'public/images/Me_pera2.jpg', 'public/images/Me_wrkshp2.jpg'
+    '/images/Pera_me.jpg', '/images/Me_wrkshp.jpg', '/images/Me_sprit.jpg',
+    '/images/Me_pera2.jpg', '/images/Me_wrkshp2.jpg'
   ];
   let index = 0;
   const slideshow = document.getElementById('photos-me');
