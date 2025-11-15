@@ -26,21 +26,16 @@ const apiLimiter = rateLimit({
 });
 app.use('/api', apiLimiter);
 
-const allowedOrigins = [
-  "https://hamoodthariq.vercel.app/",
-  "http://localhost:5173",
-  "http://127.0.0.1:5173"
-];
+const allowCorsOrigin = (origin, callback) => {
+  if (!origin) return callback(null, true); // allow requests without Origin (e.g., curl, file://)
+  const isProd = origin === "https://hamoodthariq.vercel.app" || origin === "https://hamoodthariq.netlify.app";
+  const isLocal = /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
+  if (isProd || isLocal) return callback(null, true);
+  return callback(new Error("Not allowed by CORS"));
+};
 
-app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
-      return callback(null, origin);
-    }
-    return callback(new Error("Not allowed by CORS"));
-  },
-  credentials: true
-}));
+app.use(cors({ origin: allowCorsOrigin, credentials: true }));
+app.options('*', cors({ origin: allowCorsOrigin, credentials: true }));
 
 
 if(!process.env.MONGO_URL){
