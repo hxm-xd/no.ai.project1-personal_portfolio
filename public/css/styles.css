@@ -381,7 +381,6 @@ nav a:hover{
 }
 
 
-
 .vol-title{
     font-weight: bold;
     font-size: 20px;  
@@ -402,16 +401,8 @@ nav a:hover{
     position: relative;
     margin-bottom: 20px;
 }
-.vol-imgs{
-    display: grid;
-    row-gap: 10px;
-    grid-template-columns: repeat(2, 1fr);
-}
-.vol-img img{
-    width: 400px;
-    height: fit-content;
-    border-radius: 10px;
-}
+
+
 
 .date{
     font-size: 12px;
