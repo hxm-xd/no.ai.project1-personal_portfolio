@@ -35,16 +35,13 @@ const allowCorsOrigin = (origin, callback) => {
 };
 
 app.use(cors({ origin: allowCorsOrigin, credentials: true }));
-app.options('*', cors({ origin: allowCorsOrigin, credentials: true }));
+app.options(/.*/, cors({ origin: allowCorsOrigin, credentials: true }));
 
 
 if(!process.env.MONGO_URL){
   console.error("❌ MONGO_URL not set in environment.");
 } else {
-  mongoose.connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  mongoose.connect(process.env.MONGO_URL)
   .then(() => console.log("✅ MongoDB connected successfully"))
   .catch(err => console.error("❌ MongoDB connection error:", err));
 }
