@@ -27,7 +27,7 @@ const apiLimiter = rateLimit({
 app.use('/api', apiLimiter);
 
 const allowedOrigins = [
-  "https://hamoodthariq.vercel.app",
+  "https://hamoodthariq.vercel.app/",
   "http://localhost:5173",
   "http://127.0.0.1:5173"
 ];
