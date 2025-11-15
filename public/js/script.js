@@ -148,35 +148,23 @@ document.addEventListener("DOMContentLoaded", () => {
 //Fetch volunteering details
 document.addEventListener("DOMContentLoaded", () => {
 
-  const volunteeringContainer = document.querySelector(".volunteering .vol-grid");
+  const volunteeringContainer = document.querySelector(".volunteering .vol-card");
 
   fetch("https://no-ai-portfolio.onrender.com/api/volunteering")
     .then((res) => res.json())
       .then((volunteering) => {
         if (volunteeringContainer) volunteeringContainer.innerHTML = "";
-        volunteering.forEach((item) =>{
-          const volCard = document.createElement("div");
-          volCard.className = "vol-card";
-          volCard.innerHTML = `
-            <div class="vol-head">
-              <i class="fa-solid fa-handshake-angle"></i>
-              <div class="meta">
-                <h2 class="vol-title">${item.org}</h2>
-                <span class="chip year">${item.year}</span>
-              </div>
-            </div>
+        volunteering.forEach((volunteering) =>{
+          const vol_card = document.createElement("div");
+          vol_card.className = "vol-card";
+          vol_card.innerHTML = `
+          <h2 class="vol-title">${volunteering.org}</h2>
+          <p class="ex-yr">${volunteering.year}</p>
             <ul class="positions">
-              ${item.positions
-                .map(role => `
-                  <li>
-                    <span class="role">${role.role}</span>
-                    <span class="chip date">${role.date}</span>
-                  </li>
-                `)
-                .join('')}
+              ${volunteering.positions.map(role => `<li>${role.role}<p class="date">${role.date}</p></li>`).join('')}
             </ul>
           `;
-          if (volunteeringContainer) volunteeringContainer.appendChild(volCard);
+          if (volunteeringContainer) volunteeringContainer.appendChild(vol_card);
         });
       })
     .catch((err) =>console.error("Error fetching Volunteering data: ",err));
