@@ -111,13 +111,13 @@ nav a:hover{
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid white;
-    animation: typing 3.3s steps(40, end) forwards, blink 0.5s step-end infinite;    
+    animation: typing 3s steps(100, end) forwards, blink 0.5s step-end infinite;    
 }
 
 @keyframes typing{
 
     from {width: 0; }
-    to {width: 40ch;}
+    to {width: 35ch;}
 
 }
 
@@ -130,7 +130,7 @@ nav a:hover{
 .home{
     position: relative; 
     height: 100vh;  
-    text-align: left;
+    text-align: center;
     padding-left: 20px;
     font-size: 28px;
     justify-items: center;
@@ -147,6 +147,7 @@ nav a:hover{
 .home h1{
     font-size: 36px;
     padding-left: 10px;
+    z-index: 1000;
 }
 
 .photos-me{
@@ -155,7 +156,7 @@ nav a:hover{
     padding-left: 150px;
     padding-top: 30px;
     animation: fadeIn 1s ease forwards;
-    animation-delay: 3s;
+    animation-delay: 2.5s;
 }
 
 #photos-me {
@@ -233,10 +234,6 @@ nav a:hover{
     gap: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
-}
-
-.skills-container{
-    padding-top: 30px;
 }
 
 .skill {

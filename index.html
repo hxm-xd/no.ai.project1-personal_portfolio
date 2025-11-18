@@ -3,11 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b0b0c" />
     <meta
       name="description"
       content="Portfolio of Hamood Thariq – Software Engineering undergraduate showcasing projects, skills, and volunteering."
     />
     <title>Hamood Thariq</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
     <link rel="stylesheet" href="public/css/styles.css" />
     <link
       rel="stylesheet"
@@ -15,138 +17,26 @@
     />
   </head>
   <body>
-    <header id="navbar" class="navbar" role="banner">
-      <h1 class="port-head"><a href="#home">My portfolio</a></h1>
-      <nav aria-label="Primary navigation" role="navigation">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#volunteering">Volunteering</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
     <main id="main-content" role="main">
       <section id="home" aria-labelledby="home-heading">
         <div class="home">
           <div id="particles-js"></div>
           <h1 id="home-heading" class="typing">
-            Hello, welcome to my portfolio.
+            New portfolio @
+            <a href="https://hamoodthariq.vercel.app"
+              >hamoodthariq.vercel.app"</a
+            >
           </h1>
-          <div class="photos-me">
-            <img
-              src="public/images/Pera_me.jpg"
-              alt="Hamood at Peradeniya campus"
-              id="photos-me"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section id="about" class="about reveal">
-        <h1>👨🏻About me</h1>
-        <div class="about-left">
-          <div class="about">
-            <p class="about-text"></p>
-          </div>
-        </div>
-
-        <div class="pics"></div>
-        <div>
-          <img
-            src="public/images/mypic.jpg"
-            alt="My photo"
-            class="pic-me"
-            id="pic-me"
-          />
-        </div>
-      </section>
-
-      <section class="skills reveal" id="skills">
-        <h1>🦾 Skills</h1>
-        <div class="skills-container"></div>
-      </section>
-
-      <section id="projects" class="projects reveal">
-        <h1>⚒️ Projects</h1>
-        <div class="projects-cards">
-          <div class="card"></div>
-        </div>
-      </section>
-
-      <section
-        id="volunteering"
-        class="volunteering reveal"
-        aria-labelledby="volunteering-heading"
-      >
-        <div class="volunteering">
-          <h1 id="volunteering-heading">🌍 Volunteering</h1>
-          <div class="vol-grid"></div>
-        </div>
-      </section>
-
-      <section id="contact" class="reveal">
-        <div class="contact">
-          <h1>📞 Contact</h1>
-          <div class="contact-cards">
-            <div class="contact-card">
-              <h3>📖 Education</h3>
-              <p>Higher National Diploma in Software Engineering - NIBM</p>
-            </div>
-            <div class="contact-card">
-              <h3>📍 Location</h3>
-              <p>Kandy, Sri Lanka</p>
-            </div>
-            <div class="contact-card">
-              <h3>📧 Email</h3>
-              <a href="mailto:HamoodThariq@outlook.com"
-                ><p>HamoodThariq@outlook.com</p></a
-              >
-            </div>
-
-            <a href="public/files/CV-HamoodThariq.pdf" download>
-              <div class="dwn-contact-card">
-                <h3>📁 Resume</h3>
-                <p>Click to Download</p>
-              </div>
-            </a>
-          </div>
         </div>
       </section>
     </main>
-    <footer role="contentinfo">
-      <div class="footer-links">
-        <a
-          href="https://github.com/hxm-xd"
-          target="_blank"
-          rel="noopener noreferrer"
-          ><i class="fab fa-github"></i
-        ></a>
-        <a
-          href="https://linkedin.com/in/hamood-thariq-979409289"
-          target="_blank"
-          rel="noopener noreferrer"
-          ><i class="fab fa-linkedin"></i
-        ></a>
-        <a
-          href="https://twitter.com/_hxm_xd"
-          target="_blank"
-          rel="noopener noreferrer"
-          ><i class="fab fa-twitter"></i
-        ></a>
-        <a href="mailto:HamoodThariq@outlook.com"
-          ><i class="fas fa-envelope"></i
-        ></a>
-        <p>&copy; 2025 Hamood Thariq. All rights reserved.</p>
-      </div>
-    </footer>
     <div
       aria-live="polite"
       aria-atomic="true"
       id="status-region"
       class="visually-hidden"
     ></div>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js" defer></script>
     <script src="public/js/script.js" defer></script>
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
   </body>
 </html>
